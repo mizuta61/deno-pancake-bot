@@ -11,14 +11,18 @@ const bot = createBot({
   },
 });
 
+const pattern = /^ぱ$|ぱんけーき|パンケーキ|ぱんけーき|ホットケーキ|pancake/;
+const pancake_urls = [
+  "https://imgur.com/eoeCqai",
+  "https://imgur.com/SD0Lcs3",
+  "https://imgur.com/VH9zxjl",
+  "https://imgur.com/RdYjOS1",
+];
+
 bot.events.messageCreate = (b, message) => {
-  if (message.content === "ぱ") {
+  if (pattern.test(message.content)) {
     b.helpers.sendMessage(message.channelId, {
-      content: "https://imgur.com/eoeCqai",
-    });
-  } else if (message.content === "ぱんけーき") {
-    b.helpers.sendMessage(message.channelId, {
-      content: "https://imgur.com/SD0Lcs3",
+      content: pancake_urls[Math.floor(Math.random() * pancake_urls.length)],
     });
   }
 };
