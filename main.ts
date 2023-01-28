@@ -11,7 +11,7 @@ const bot = createBot({
   },
 });
 
-const pattern = /^ぱ$|ぱんけーき|パンケーキ|ぱんけーき|ホットケーキ|pancake/;
+const pattern = /^ぱ$|ぱんけーき|パンケーキ|ホットケーキ|pancake/;
 const pancake_urls = [
   "https://imgur.com/eoeCqai",
   "https://imgur.com/SD0Lcs3",
