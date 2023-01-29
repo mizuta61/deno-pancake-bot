@@ -1,4 +1,4 @@
-FROM denoland/deno:alpine
+FROM denoland/deno:1.30.0
 
 WORKDIR /app
 
@@ -8,4 +8,4 @@ RUN deno cache deps.ts
 ADD . .
 RUN deno cache main.ts
 
-CMD ["run", "--allow-net", "main.ts"]
+CMD [ "deno", "task", "dev" ]
