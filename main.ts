@@ -13,7 +13,7 @@ const bot = createBot({
 
 export const checkMessage = (messageContent: string): boolean => {
   const pattern =
-    /^(ぱ|(けき))$|(ぱんけ|パンケ)[ー\-〜\~]{0,}[きキ]|(pan|hot)cake/i;
+    /^(ぱ|(けき))$|(ぱん|パン)[けケ][ー\-〜\~]*[きキ]|(pan|hot)cake/i;
   return pattern.test(messageContent);
 };
 
